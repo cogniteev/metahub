@@ -160,8 +160,7 @@ Metahub.prototype.clearCache = function () {
 };
 
 Metahub.prototype.getHooks = function () {
-  return this.rest.repos.getHooks(this.config.msg).
-    then(stripUrl);
+  return this.rest.repos.getHooks(this.config.msg);
 };
 
 Metahub.prototype.getCommits = function (number) {
