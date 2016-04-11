@@ -180,6 +180,14 @@ Metahub.prototype.getIssue = function (number) {
     then(stripUrl);
 };
 
+Metahub.prototype.getIssueLabels = function (number) {
+  var msg = _.defaults({
+    number: number
+  }, this.config.msg);
+  return this.rest.issues.getIssueLabels(msg).
+    then(stripUrl);
+};
+
 Metahub.prototype.getContributors = function () {
   return this.rest.repos.getContributors(this.config.msg).
     then(stripUrl);
